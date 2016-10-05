@@ -1,51 +1,26 @@
+
+<?php 
+// https://phpbestpractices.org/
+// http://br.phptherightway.com/
+// Most common mistakes;
+// http://www.w3schools.com/php/php_form_validation.asp
+	require ("helper/ServerHelper.php");
+	require ("helper/Helper.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <body>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+<form method="post" action="<?php echo htmlspecialchars(getFromServer('PHP_SELF'));?>">
   Name: <input type="text" name="fname">
   <input type="submit">
 </form>
 
 <?php 
-	
 	include ("header.php");// for menus
- 	require ("helper/ServerHelper.php");
- 	require ("helper/Helper.php");
-
-// 	phpinfo(); 
-	
-
-//	echo $text." ".$asdf;
-	
-	// die();
-	
-//	if (true) {
-//		echo "True";
-//	}
-	
-	// != is equal to <> 
-	// == same value
-	// === same value and same type
-// 	mysql_connect("localhost", "aaa", "asdaaf") || die("Deu pau na kombi");
-	
-	
-// 	preg_match(); // match string;
-	
-//	myName(12);
-//
-//	function myName($var) {
-//		echo "I'm Brayan and I'm ".howOldAmI(1991)." years old";
-//	}
-//
-//	function howOldAmI($bornYear) {
-//		return 2016 - $bornYear;
-//	}
-//
-
-//https://www.youtube.com/watch?v=jhZLfyscYgI&list=PLC62DA565A393C969&index=34
-
-// 	$GLOBALS // Access all the global variables;
+ 	
 
 	showServerInfo();
 
