@@ -4,7 +4,7 @@
 		return $_SERVER[$name];
 	}
 
-	function getFromPost($name) {
+	function getDataFromPost($name) {
 		return $_POST[$name];
 	}
 	
@@ -12,12 +12,28 @@
 		return $_GET[$name];
 	}
 	
-	function isRequestPost() {
-		return $_SERVER["REQUEST_METHOD"] == "POST";
+	function isPerformingPost() {
+		return getRequestMethod() == "POST";
+	}
+	
+	function getRequestMethod() {
+		return getFromServer("REQUEST_METHOD");
 	}
 	
 	function isEmpty($var) {
 		return empty($var);
+	}
+	
+	function getPhpSelf() {
+		return getFromServer('PHP_SELF');
+	}
+	
+	function getSecureInputData($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+			
+		return $data;
 	}
 
 ?>
