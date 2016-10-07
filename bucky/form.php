@@ -1,7 +1,6 @@
 
-<?php
-require ("helper/Helper.php");
-require ("helper/ServerHelper.php"); ?>
+<?php require ("helper/Helper.php"); ?>
+<?php require ("helper/ServerHelper.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -24,23 +23,24 @@ require ("helper/ServerHelper.php"); ?>
 	  	<input type="submit">
 	</form>
 	
+	
 	<?php 
 	
 		if (isPerformingPost()) {
 			onPerformPostRequest();
 		}
-	
+		
 		function onPerformPostRequest() {
-			echo getSecureInputData(getDataFromPost("name"));
-			echo "<br />";
-			
-			echo getSecureInputData(getDataFromPost("email"));
-			echo "<br />";
-			
-			echo getSecureInputData(getDataFromPost("website"));
-			echo "<br />";
+			$name = getSecureInputData(getDataFromPost("name"));
+			$email = getSecureInputData(getDataFromPost("email"));
+			$website = getSecureInputData(getDataFromPost("website"));
+			$comment = getSecureInputData(getDataFromPost("comment"));
+			$gender = getSecureInputData(getDataFromPost("gender"));
 		}
+		
+		
 	?>
+	
 
 </body>
 </html>
